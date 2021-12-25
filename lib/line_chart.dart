@@ -21,13 +21,16 @@ class _LineChartSample2State extends State<LineChartSample2> {
     return Stack(
       children: <Widget>[
         AspectRatio(
-          aspectRatio: 1.70,
+          aspectRatio: 2.6,
           child: Container(
-            decoration: const BoxDecoration(
+            padding: EdgeInsets.all(10.0),
+            height: 200,
+            decoration:  BoxDecoration(
+              border: Border.all(color: Colors.black12),
                 borderRadius: BorderRadius.all(
                   Radius.circular(18),
                 ),
-                color: Color(0xff232d37)),
+                color: Colors.white),
             child: Padding(
               padding: const EdgeInsets.only(
                   right: 18.0, left: 12.0, top: 24, bottom: 12),
@@ -37,21 +40,28 @@ class _LineChartSample2State extends State<LineChartSample2> {
             ),
           ),
         ),
-        SizedBox(
-          width: 60,
-          height: 34,
-          child: TextButton(
-            onPressed: () {
-              setState(() {
-                showAvg = !showAvg;
-              });
-            },
-            child: Text(
-              'avg',
-              style: TextStyle(
-                  fontSize: 12,
-                  color:
-                      showAvg ? Colors.white.withOpacity(0.5) : Colors.white),
+        
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: SizedBox(
+            
+            width: 100,
+            height: 34,
+            child: TextButton(
+              onPressed: () {
+                setState(() {
+                  showAvg = !showAvg;
+                });
+              },
+              child: Text(
+                'Student',
+                style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color:
+                        showAvg ? Colors.white.withOpacity(0.5) : Colors.black87),
+                        
+              ),
             ),
           ),
         ),
@@ -61,21 +71,11 @@ class _LineChartSample2State extends State<LineChartSample2> {
 
   LineChartData mainData() {
     return LineChartData(
+      
       gridData: FlGridData(
-        show: true,
-        drawVerticalLine: true,
-        getDrawingHorizontalLine: (value) {
-          return FlLine(
-            color: const Color(0xff37434d),
-            strokeWidth: 1,
-          );
-        },
-        getDrawingVerticalLine: (value) {
-          return FlLine(
-            color: const Color(0xff37434d),
-            strokeWidth: 1,
-          );
-        },
+        show: false,
+        drawVerticalLine: false,
+       
       ),
       titlesData: FlTitlesData(
         show: true,
@@ -92,11 +92,19 @@ class _LineChartSample2State extends State<LineChartSample2> {
           getTitles: (value) {
             switch (value.toInt()) {
               case 2:
-                return 'MAR';
+                return 'Jan';
               case 5:
-                return 'JUN';
+                return 'Feb';
               case 8:
-                return 'SEP';
+                return 'Mar';
+              case 11:
+                 return 'Apr';
+              case 14:
+                 return 'May';
+              case 17:
+                 return 'Jun';
+              case 20:
+                 return 'Jul';
             }
             return '';
           },
@@ -113,11 +121,15 @@ class _LineChartSample2State extends State<LineChartSample2> {
           getTitles: (value) {
             switch (value.toInt()) {
               case 1:
-                return '10k';
+                return '20';
               case 3:
-                return '30k';
+                return '40';
               case 5:
-                return '50k';
+                return '60';
+              case 7:
+                return '80';
+              case 9:
+                return '100';
             }
             return '';
           },
@@ -126,14 +138,16 @@ class _LineChartSample2State extends State<LineChartSample2> {
         ),
       ),
       borderData: FlBorderData(
-          show: true,
-          border: Border.all(color: const Color(0xff37434d), width: 1)),
+          show: false,
+          ),
       minX: 0,
       maxX: 11,
       minY: 0,
       maxY: 6,
+      
       lineBarsData: [
         LineChartBarData(
+          
           spots: const [
             FlSpot(0, 3),
             FlSpot(2.6, 2),
@@ -145,7 +159,7 @@ class _LineChartSample2State extends State<LineChartSample2> {
           ],
           isCurved: true,
           colors: gradientColors,
-          barWidth: 5,
+          barWidth: 2,
           isStrokeCapRound: true,
           dotData: FlDotData(
             show: false,
@@ -191,11 +205,19 @@ class _LineChartSample2State extends State<LineChartSample2> {
           getTitles: (value) {
             switch (value.toInt()) {
               case 2:
-                return 'MAR';
+                return 'Jan';
               case 5:
-                return 'JUN';
+                return 'Feb';
               case 8:
-                return 'SEP';
+                return 'Mar';
+              case 11:
+                 return 'Apr';
+              case 14:
+                 return 'May';
+              case 17:
+                 return 'Jun';
+              case 20:
+                 return 'Jul';
             }
             return '';
           },
@@ -212,11 +234,15 @@ class _LineChartSample2State extends State<LineChartSample2> {
           getTitles: (value) {
             switch (value.toInt()) {
               case 1:
-                return '10k';
+                return '20';
               case 3:
-                return '30k';
+                return '40';
               case 5:
-                return '50k';
+                return '60';
+              case 7:
+                return '80';
+              case 9:
+                return '100';
             }
             return '';
           },
