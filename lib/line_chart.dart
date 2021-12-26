@@ -88,22 +88,22 @@ class _LineChartSample2State extends State<LineChartSample2> {
           getTextStyles: (context, value) => const TextStyle(
               color: Color(0xff68737d),
               fontWeight: FontWeight.bold,
-              fontSize: 16),
+              fontSize: 12),
           getTitles: (value) {
             switch (value.toInt()) {
-              case 2:
+              case 1:
                 return 'Jan';
-              case 5:
+              case 3:
                 return 'Feb';
-              case 8:
+              case 5:
                 return 'Mar';
-              case 11:
+              case 7:
                  return 'Apr';
-              case 14:
+              case 9:
                  return 'May';
-              case 17:
+              case 11:
                  return 'Jun';
-              case 20:
+              case 13:
                  return 'Jul';
             }
             return '';
@@ -116,19 +116,19 @@ class _LineChartSample2State extends State<LineChartSample2> {
           getTextStyles: (context, value) => const TextStyle(
             color: Color(0xff67727d),
             fontWeight: FontWeight.bold,
-            fontSize: 15,
+            fontSize: 12,
           ),
           getTitles: (value) {
             switch (value.toInt()) {
               case 1:
                 return '20';
-              case 3:
+              case 2:
                 return '40';
-              case 5:
+              case 3:
                 return '60';
-              case 7:
+              case 4:
                 return '80';
-              case 9:
+              case 5:
                 return '100';
             }
             return '';
@@ -141,7 +141,7 @@ class _LineChartSample2State extends State<LineChartSample2> {
           show: false,
           ),
       minX: 0,
-      maxX: 11,
+      maxX: 13,
       minY: 0,
       maxY: 6,
       
@@ -156,6 +156,7 @@ class _LineChartSample2State extends State<LineChartSample2> {
             FlSpot(8, 4),
             FlSpot(9.5, 3),
             FlSpot(11, 4),
+            FlSpot(13, 3.44),
           ],
           isCurved: true,
           colors: gradientColors,
@@ -167,7 +168,7 @@ class _LineChartSample2State extends State<LineChartSample2> {
           belowBarData: BarAreaData(
             show: true,
             colors:
-                gradientColors.map((color) => color.withOpacity(0.3)).toList(),
+                gradientColors.map((color) => color.withOpacity(0.1)).toList(),
           ),
         ),
       ],
@@ -201,22 +202,22 @@ class _LineChartSample2State extends State<LineChartSample2> {
           getTextStyles: (context, value) => const TextStyle(
               color: Color(0xff68737d),
               fontWeight: FontWeight.bold,
-              fontSize: 16),
+              fontSize: 12),
           getTitles: (value) {
             switch (value.toInt()) {
-              case 2:
+              case 1:
                 return 'Jan';
-              case 5:
+              case 3:
                 return 'Feb';
-              case 8:
+              case 5:
                 return 'Mar';
-              case 11:
+              case 7:
                  return 'Apr';
-              case 14:
+              case 9:
                  return 'May';
-              case 17:
+              case 11:
                  return 'Jun';
-              case 20:
+              case 13:
                  return 'Jul';
             }
             return '';
@@ -229,19 +230,19 @@ class _LineChartSample2State extends State<LineChartSample2> {
           getTextStyles: (context, value) => const TextStyle(
             color: Color(0xff67727d),
             fontWeight: FontWeight.bold,
-            fontSize: 15,
+            fontSize: 12,
           ),
           getTitles: (value) {
             switch (value.toInt()) {
               case 1:
                 return '20';
-              case 3:
+              case 2:
                 return '40';
-              case 5:
+              case 3:
                 return '60';
-              case 7:
+              case 4:
                 return '80';
-              case 9:
+              case 5:
                 return '100';
             }
             return '';
@@ -257,7 +258,7 @@ class _LineChartSample2State extends State<LineChartSample2> {
           show: true,
           border: Border.all(color: const Color(0xff37434d), width: 1)),
       minX: 0,
-      maxX: 11,
+      maxX: 13,
       minY: 0,
       maxY: 6,
       lineBarsData: [
@@ -270,6 +271,7 @@ class _LineChartSample2State extends State<LineChartSample2> {
             FlSpot(8, 3.44),
             FlSpot(9.5, 3.44),
             FlSpot(11, 3.44),
+            FlSpot(13, 3.44),
           ],
           isCurved: true,
           colors: [

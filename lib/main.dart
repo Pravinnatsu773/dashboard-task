@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:dashboardtask/side_menu.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:dashboardtask/dash_board.dart';
-
+import 'package:dashboardtask/right_side_menu.dart';
 
 void main() {
   runApp(MyApp());
@@ -38,11 +38,14 @@ class _MainScreen extends State<MainScreen> {
               child: SideMenu(),
             ),
             Expanded(
-              flex: 3,
-              child: DashBoardScreen(),
+              flex: 4,
+              child: Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: DashBoardScreen(),
+              ),
               ),
               Expanded(
-              flex: 2,
+              
               child: RightSideMenu(),
               ),
 
@@ -54,12 +57,12 @@ class _MainScreen extends State<MainScreen> {
   }
 }
 
-class RightSideMenu extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    return Container(
+// class RightSideMenu extends StatelessWidget{
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
       
-      color: Colors.red,
-    );
-  }
-}
+//       color: Colors.red,
+//     );
+//   }
+// }
