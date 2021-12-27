@@ -9,6 +9,7 @@ import 'package:flutter/widgets.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:dashboardtask/line_chart.dart';
 
+
 class DashBoardScreen extends StatefulWidget{
   @override
   State<DashBoardScreen> createState() => _DashBoardScreenState();
@@ -39,12 +40,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     
-    double  scaleSmallDevice(BuildContext context){
-      if(width<1000){
-        return 16;
-      }
-      return 20;
-    }
+  
     return SafeArea(
       child: SingleChildScrollView(
         padding: EdgeInsets.all(25.0),
@@ -86,19 +82,19 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                     padding: EdgeInsets.all(16.0),
                     decoration: BoxDecoration(
                       border: Border.all(
-                        color: Colors.black12,
+                        color: Color(0xffbbdefb),
                         width: 3.0
                       ),
                       borderRadius: BorderRadius.all(Radius.circular(5.0)),
                     ),
                     child: Row(children: [
-                      Icon(Icons.person,
-                      size: scaleSmallDevice(context)+10,),
+                     Image.network('https://cdn-icons-png.flaticon.com/512/3135/3135810.png',width: 30,),
+                     SizedBox(width: 10,),
                       Text('Students',
                           style:TextStyle(
-                            fontSize: scaleSmallDevice(context),
-                            
-                            color: Colors.black38,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: Color(0xffbbdefb),
                           ),
                          ),
                     ],),
@@ -117,13 +113,13 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                       borderRadius: BorderRadius.all(Radius.circular(5.0)),
                     ),
                     child: Row(children: [
-                      Icon(Icons.person,
-                      size: scaleSmallDevice(context)+10,),
+                      Image.network('https://cdn-icons-png.flaticon.com/512/1995/1995574.png',width: 30,),
+                     SizedBox(width: 10,),
                       Text('Teachers',
                           style:TextStyle(
-                            fontSize: scaleSmallDevice(context),
-                            
-                            color: Colors.black38,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
                           ),
                          ),
                     ],),
@@ -147,13 +143,13 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                       borderRadius: BorderRadius.all(Radius.circular(5.0)),
                     ),
                     child: Row(children: [
-                      Icon(Icons.person,
-                      size: scaleSmallDevice(context)+10,),
+                      Image.network('https://cdn-icons.flaticon.com/png/512/3281/premium/3281869.png?token=exp=1640603553~hmac=c8ca46886bf43760ab489e168424b12d',width: 30,),
+                     SizedBox(width: 10,),
                       Text('Staffs',
                           style:TextStyle(
-                            fontSize: scaleSmallDevice(context),
-                            
-                            color: Colors.black38,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
                           ),
                          ),
                     ],),

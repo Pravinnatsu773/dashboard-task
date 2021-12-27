@@ -28,7 +28,7 @@ Widget build(BuildContext context) {
         
                       ),
                     ),
-                    Spacer(flex: 1),
+                    
           
                   ],
         ),
