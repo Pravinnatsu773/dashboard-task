@@ -88,7 +88,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                       borderRadius: BorderRadius.all(Radius.circular(5.0)),
                     ),
                     child: Row(children: [
-                     Image.network('https://cdn-icons-png.flaticon.com/512/3135/3135810.png',width: 30,),
+                     Image.asset('images/graduated.png',width: 30,),
                      SizedBox(width: 10,),
                       Text('Students',
                           style:TextStyle(
@@ -98,7 +98,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                           ),
                          ),
                     ],),
-                  ),
+                                          ),
                 ),
                 SizedBox(width: 16.0,),
                 GestureDetector(
@@ -113,7 +113,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                       borderRadius: BorderRadius.all(Radius.circular(5.0)),
                     ),
                     child: Row(children: [
-                      Image.network('https://cdn-icons-png.flaticon.com/512/1995/1995574.png',width: 30,),
+                      Image.asset('images/teacher.png',width: 30,),
                      SizedBox(width: 10,),
                       Text('Teachers',
                           style:TextStyle(
@@ -143,7 +143,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                       borderRadius: BorderRadius.all(Radius.circular(5.0)),
                     ),
                     child: Row(children: [
-                      Image.network('https://cdn-icons.flaticon.com/png/512/3281/premium/3281869.png?token=exp=1640603553~hmac=c8ca46886bf43760ab489e168424b12d',width: 30,),
+                      Image.asset('images/staff.png',width: 30,),
                      SizedBox(width: 10,),
                       Text('Staffs',
                           style:TextStyle(

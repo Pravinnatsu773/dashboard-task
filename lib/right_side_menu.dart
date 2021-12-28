@@ -18,7 +18,7 @@ class _RightSideMenuState extends State<RightSideMenu> {
     'Vishen lakhiani',
     'Jay Shetty',
   ];
-
+  
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -78,7 +78,15 @@ class _RightSideMenuState extends State<RightSideMenu> {
 
                     ],
                   ),
-                  Icon(Icons.notifications),
+                  Stack(
+                    children: [
+                      Icon(Icons.notifications),
+                      Positioned(
+                        top: 1.0,
+                        right: 0.0,
+                        child: Icon(Icons.brightness_1, size: 8.0, color: Colors.red,))
+                    ],
+                  ),
                  
               ],
               ),

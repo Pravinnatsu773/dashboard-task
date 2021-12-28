@@ -1,7 +1,7 @@
+import 'dart:collection';
+
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
-import 'package:intl/intl.dart';
-import 'package:flutter_clean_calendar/flutter_clean_calendar.dart';
 import 'package:dashboardtask/utils.dart';
 
 
@@ -14,10 +14,36 @@ class CalendarWidget extends StatefulWidget {
 
 class _CalendarWidgetState extends State<CalendarWidget> {
 
+  late final ValueNotifier<List<Event>> _selectedEvents;
   CalendarFormat _calendarFormat = CalendarFormat.month;
+  
   DateTime _focusedDay = DateTime.now();
   DateTime? _selectedDay;
+ 
 
+
+ @override
+  void dispose() {
+    _selectedEvents.dispose();
+    super.dispose();
+  }
+
+  List<Event> _getEventsForDay(DateTime day) {
+    // Implementation example
+    return kEvents[day] ?? [];
+  }
+
+  List<Event> _getEventsForRange(DateTime start, DateTime end) {
+    // Implementation example
+    final days = daysInRange(start, end);
+
+    return [
+      for (final d in days) ..._getEventsForDay(d),
+    ];
+  }
+
+
+ 
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -28,8 +54,10 @@ class _CalendarWidgetState extends State<CalendarWidget> {
           borderRadius: BorderRadius.all(Radius.circular(10)),
         ),
         child: TableCalendar(
-
-          calendarStyle: CalendarStyle(
+           eventLoader: _getEventsForDay,
+          calendarStyle: const CalendarStyle(
+          markerSize: 4,
+            markerDecoration: BoxDecoration(color: Colors.red, shape: BoxShape.circle),
             outsideDaysVisible: false,
             defaultTextStyle: TextStyle(fontSize: 14),
             weekendTextStyle: TextStyle(fontSize: 14),
@@ -41,14 +69,14 @@ class _CalendarWidgetState extends State<CalendarWidget> {
           
           rowHeight: 40.0,
           daysOfWeekHeight: 40,
-        headerStyle: HeaderStyle(
+        headerStyle: const HeaderStyle(
           formatButtonVisible: false,
           titleCentered: true,
           titleTextStyle: TextStyle(
             fontWeight:FontWeight.bold,
           )
         ),
-        daysOfWeekStyle: DaysOfWeekStyle(
+        daysOfWeekStyle: const DaysOfWeekStyle(
           weekdayStyle: TextStyle(fontSize: 12,fontWeight: FontWeight.bold),
           weekendStyle: TextStyle(fontSize: 12,fontWeight: FontWeight.bold)
         ),

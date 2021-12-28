@@ -65,22 +65,44 @@ class SideMenu extends StatelessWidget {
                           ),
                          ),
             ),
-            ListTile(
-              onTap: (){},
-              horizontalTitleGap: 15,
-              contentPadding: EdgeInsets.only(top:15,bottom:15,right:50,left:50),
-              leading: Icon(
-                Icons.message_outlined,
-                size: 40,
-                color: Colors.white,
-              ),
-              title: const Text('Logbook',
-                          style:TextStyle(
-                            fontSize: 25,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
-                         ),
+            Stack(
+              children: [
+                ListTile(
+                  onTap: (){},
+                  horizontalTitleGap: 15,
+                  contentPadding: EdgeInsets.only(top:15,bottom:15,right:50,left:50),
+                  leading: Icon(
+                    Icons.message_outlined,
+                    size: 40,
+                    color: Colors.white,
+                  ),
+                  title: Stack(
+                    children: [
+                      Text('Logbook',
+                              style:TextStyle(
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                             ),
+                Positioned(
+                        top: 1.0,
+                        right: 0.0,
+                        child: Stack(
+                          children: [
+                            Icon(Icons.brightness_1, size: 22.0, color: Colors.red,),
+                            Padding(
+                              padding: const EdgeInsets.only(top:4.0,left: 6.0),
+                              child: Text('2', style: TextStyle(fontSize: 12,color: Colors.white),),
+                            ),
+                          ],
+                        ),
+                ),
+                    ],
+                  )
+                ),
+                
+              ],
             ),
             ListTile(
               onTap: (){},
