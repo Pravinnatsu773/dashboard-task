@@ -113,7 +113,7 @@ class SideMenu extends StatelessWidget {
                 size: 40,
                 color: Colors.white,
               ),
-              title: const Text('Calender',
+              title: const Text('Calendar',
                           style:TextStyle(
                             fontSize: 25,
                             fontWeight: FontWeight.bold,
